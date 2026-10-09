@@ -1,0 +1,155 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para mi amor ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Georgia, serif;
+    color: #fff;
+    background: linear-gradient(135deg, #30051c, #8f174b, #e66b8e);
+    padding: 20px;
+}
+
+.contenedor {
+    width: 100%;
+    max-width: 430px;
+    padding: 30px 24px;
+    text-align: center;
+    border: 1px solid #ffffff60;
+    border-radius: 24px;
+    background: #ffffff18;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 40px #0004;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+p {
+    line-height: 1.7;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ffffff80;
+    border-radius: 12px;
+    background: #ffffff20;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    margin: 12px 0;
+}
+
+input::placeholder {
+    color: #ffffffbd;
+}
+
+button {
+    padding: 13px 24px;
+    border: none;
+    border-radius: 12px;
+    background: #ffb6cb;
+    color: #651333;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#carta {
+    display: none;
+    text-align: left;
+    animation: aparecer 1s ease;
+}
+
+.corazon {
+    font-size: 45px;
+    animation: latir 1s infinite;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes latir {
+    50% { transform: scale(1.15); }
+}
+</style>
+</head>
+
+<body>
+<div class="contenedor" id="inicio">
+    <div class="corazon">❤️</div>
+    <h1>Una sorpresa para vos</h1>
+    <p>Hay algo muy especial esperándote, mi amor.</p>
+    <p>Pero primero tenés que ingresar nuestra contraseña 💌</p>
+
+    <form id="formulario">
+        <input id="clave" type="password"
+        placeholder="Nuestra contraseña..." required>
+        <button type="submit">Abrir mi regalo ❤️</button>
+    </form>
+
+    <p id="error" style="display:none;color:#ffd6df;">
+        Esa no es, mi amor. Intentá otra vez 💗
+    </p>
+</div>
+
+<div class="contenedor" id="carta">
+    <div class="corazon">💌</div>
+    <h1>Para mi gorda hermosa</h1>
+    <p>Feliz cumpleaños, mi amor ❤️</p>
+
+    <p>
+        Acá empieza nuestra cartita especial.
+        Quiero que sepas lo muchísimo que te amo,
+        lo importante que sos para mí y lo feliz
+        que me hace compartir mi vida con vos.
+    </p>
+
+    <p>
+        Gracias por tantos momentos juntos.
+        Ojalá podamos seguir creando recuerdos,
+        riéndonos juntos y acompañándonos siempre.
+        Te merecés todas las cosas lindas del mundo.
+    </p>
+
+    <p style="text-align:center;">
+        Te amo muchísimo, mi vida. ❤️
+    </p>
+</div>
+
+<script>
+const CONTRASENA = "daiara";
+
+document.getElementById("formulario").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const clave = document.getElementById("clave").value;
+
+    if (clave.toLowerCase() === CONTRASENA) {
+        document.getElementById("inicio").style.display = "none";
+        document.getElementById("carta").style.display = "block";
+    } else {
+        document.getElementById("error").style.display = "block";
+    }
+});
+</script>
+</body>
+</html>
+```
